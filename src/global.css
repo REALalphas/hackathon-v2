@@ -3,6 +3,8 @@
 :root {
   view-transition-name: root !important;
 
+  --head-size: 30px;
+  --subhead-size: 20px;
   --base-size: 16px;
 }
 
