@@ -10,7 +10,7 @@ import s from "./Nav.module.css";
 export const Nav = component$(() => {
   return (
     <nav class={s.nav}>
-      <Link href="" class={[s.link, s.active]} data-type="speed">
+      <Link href="/speed" class={[s.link, s.active]} data-type="speed">
         <div class={s.bg}></div>
         <div class={s.content}>
           <Speed />
@@ -18,7 +18,7 @@ export const Nav = component$(() => {
         </div>
       </Link>
 
-      <Link href="" class={s.link} data-type="map">
+      <Link href="/map" class={s.link} data-type="map">
         <div class={s.bg}></div>
         <div class={s.content}>
           <Map />
@@ -26,7 +26,7 @@ export const Nav = component$(() => {
         </div>
       </Link>
 
-      <Link href="" class={s.link} data-type="geodata">
+      <Link href="/geodata" class={s.link} data-type="geodata">
         <div class={s.bg}></div>
         <div class={s.content}>
           <Geodata />

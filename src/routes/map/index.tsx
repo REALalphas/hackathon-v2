@@ -5,19 +5,13 @@ import { Link } from "@builder.io/qwik-city";
 export default component$(() => {
   return (
     <>
-      <h1>Hi 👋</h1>
-      <p>
-        Can't wait to see what you build with qwik!
-        <br />
-        <Link href="/">asdasd</Link>
-        TEST
-      </p>
+      <h1>Map</h1>
     </>
   );
 });
 
 export const head: DocumentHead = {
-  title: "Welcome to Qwik",
+  title: "Карта",
   meta: [
     {
       name: "description",
