@@ -1,0 +1,70 @@
+.nav {
+  width: 375px;
+  height: 66px;
+
+  padding: 35px 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  overflow: hidden;
+}
+
+.link {
+  position: relative;
+}
+
+.link[data-type='speed'] {
+  --grad: linear-gradient(180deg, rgba(255, 87, 208, 0.24) 0%, rgba(116, 73, 208, 0.24) 100%)
+}
+
+.link[data-type='map'] {
+  --grad: linear-gradient(180deg, rgba(92, 138, 255, 0.24) 0%, rgba(89, 186, 99, 0.24) 100%);
+}
+
+.link[data-type='geodata'] {
+  --grad: linear-gradient(180deg, rgba(255, 88, 88, 0.24) 0%, rgba(163, 74, 122, 0.24) 100%);
+}
+
+
+.content {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.bg {
+  position: absolute;
+  z-index: -1;
+  width: 20px;
+  height: 20px;
+  inset: 50%;
+  transform: translate(-50%, -50%);
+
+  border-radius: 9999px;
+  opacity: 0;
+
+  background: var(--grad);
+  transition: all .5s ease;
+}
+
+.link.active {
+  font-weight: bold;
+}
+
+.link.active .bg {
+  opacity: 1;
+  width: calc(var(--base-size) * 6.6);
+  height: calc(var(--base-size) * 6.6);
+}
+
+.link svg {
+  filter: saturate(1) brightness(1);
+  transition: all .5s ease;
+}
+
+.link.active svg {
+  filter: saturate(0) brightness(2);
+}

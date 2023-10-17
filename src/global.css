@@ -6,7 +6,9 @@
  *
  */
 :root {
-    view-transition-name: root !important; 
+    view-transition-name: root !important;
+
+    --base-size: 16px;
 }
 
 ::view-transition-old(root),
@@ -36,8 +38,23 @@ html {
         "Noto Color Emoji";
 }
 
-body {
+* {
     padding: 0;
-    line-height: inherit;
+    margin: 0;
+    box-sizing: border-box;
 }
 
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 100vh;
+    background: #191919;
+    color: white;
+}
