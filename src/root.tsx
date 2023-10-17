@@ -8,6 +8,10 @@ import { RouterHead } from "./components/router-head/router-head";
 
 import "./global.css";
 
+export interface QwikCityProps {
+  viewTransition: true
+}
+
 export default component$(() => {
   /**
    * The root of a QwikCity site always start with the <QwikCityProvider> component,

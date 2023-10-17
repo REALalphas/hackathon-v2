@@ -9,8 +9,8 @@ export default component$(() => {
       <p>
         Can't wait to see what you build with qwik!
         <br />
-        <Link href="/test">asds dasd</Link>
-        Happy coding.
+        <Link href="/">asdasd</Link>
+        TEST
       </p>
     </>
   );
