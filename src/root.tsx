@@ -6,20 +6,14 @@ import {
 } from "@builder.io/qwik-city";
 import { RouterHead } from "./components/router-head/router-head";
 
+import "./reset.css";
 import "./global.css";
 
 export interface QwikCityProps {
-  viewTransition: true
+  viewTransition: true;
 }
 
 export default component$(() => {
-  /**
-   * The root of a QwikCity site always start with the <QwikCityProvider> component,
-   * immediately followed by the document's <head> and <body>.
-   *
-   * Don't remove the `<head>` and `<body>` elements.
-   */
-
   return (
     <QwikCityProvider>
       <head>
