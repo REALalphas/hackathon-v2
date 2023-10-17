@@ -34,6 +34,14 @@ export default component$(() => {
 			<div class={s.speed}>
 				<Counter />
 			</div>
+			<div class={s.speedometer}>
+				<div class={s.gauge}>
+					<div class={s.circle}>
+						<div class={s.num}>432</div>
+						<div class={s.name}>Отдача</div>
+					</div>
+				</div>
+			</div>
 		</>
 	)
 })
