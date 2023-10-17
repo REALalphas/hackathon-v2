@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600;700&display=swap');
+
 :root {
     view-transition-name: root !important;
 
@@ -6,7 +8,7 @@
 
 ::view-transition-old(root),
 ::view-transition-new(root) {
-  animation-duration: .5s;
+    animation-duration: .5s;
 }
 
 html {
@@ -31,6 +33,9 @@ html {
         "Noto Color Emoji";
 }
 
+* {
+    font-family: Noto Sans, sans-serif;
+}
 
 body {
     background: #191919;
