@@ -1,16 +1,18 @@
 @import url("public/noto-sans/noto-sans.css");
 
 :root {
-  view-transition-name: root !important;
-
   --head-size: 30px;
   --subhead-size: 20px;
   --base-size: 16px;
 }
 
-::view-transition-old(root),
-::view-transition-new(root) {
-  animation-duration: .1s;
+main {
+  view-transition-name: main;
+}
+
+::view-transition-old(main),
+::view-transition-new(main) {
+  animation-duration: .33s;
 }
 
 
