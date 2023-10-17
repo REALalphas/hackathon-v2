@@ -1,0 +1,65 @@
+.geodata {
+  padding: 40px 20px;
+  justify-content: end;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.heading {
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 110%;
+}
+
+.heading span {
+  color: #999;
+  font-size: 30px;
+  line-height: 110%;
+}
+
+.coords {
+  color: #75A4FF;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.card_block {
+  padding: 20px 0;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 12px;
+  gap: 32px;
+}
+
+.card {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  color: #999;
+  font-weight: 700;
+  background-color: transparent;
+}
+
+.card span {
+  color: #FFF;
+}
+
+
+.text {
+  display: flex;
+  flex-direction: column;
+}
+
+.bottom {
+  margin-top: 32px;
+}
+
+.bottom .row {
+  padding-top: 12px;
+  gap: 24px;
+}
