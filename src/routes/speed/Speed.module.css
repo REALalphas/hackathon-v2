@@ -1,14 +1,14 @@
 .middle {
   display: flex;
   justify-content: space-evenly;
-  background: #292929;
   padding: 20px 0;
+  background: #292929;
 }
 
 .column {
   display: flex;
-  align-items: end;
   gap: 8px;
+  align-items: end;
   line-height: 120.023%;
 }
 
@@ -23,6 +23,6 @@
 }
 
 .num {
-  font-size: 18px;
   font-weight: 700;
+  font-size: 18px;
 }

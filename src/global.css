@@ -1,43 +1,43 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600;700&display=swap');
 
 :root {
-    view-transition-name: root !important;
+  view-transition-name: root !important;
 
-    --base-size: 16px;
+  --base-size: 16px;
 }
 
 ::view-transition-old(root),
 ::view-transition-new(root) {
-    animation-duration: .5s;
+  animation-duration: .5s;
 }
 
 html {
-    -webkit-text-size-adjust: 100%;
-    -moz-tab-size: 4;
-    -o-tab-size: 4;
-    tab-size: 4;
-    font-family:
-        ui-sans-serif,
-        system-ui,
-        -apple-system,
-        BlinkMacSystemFont,
-        "Segoe UI",
-        Roboto,
-        "Helvetica Neue",
-        Arial,
-        "Noto Sans",
-        sans-serif,
-        "Apple Color Emoji",
-        "Segoe UI Emoji",
-        "Segoe UI Symbol",
-        "Noto Color Emoji";
+  font-family:
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    "Helvetica Neue",
+    Arial,
+    "Noto Sans",
+    sans-serif,
+    "Apple Color Emoji",
+    "Segoe UI Emoji",
+    "Segoe UI Symbol",
+    "Noto Color Emoji";
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+  -webkit-text-size-adjust: 100%;
 }
 
 * {
-    font-family: Noto Sans, sans-serif;
+  font-family: Noto Sans, sans-serif;
 }
 
 body {
-    background: #191919;
-    color: white;
+  color: white;
+  background: #191919;
 }

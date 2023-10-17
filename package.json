@@ -20,6 +20,7 @@
     "fmt": "prettier --write .",
     "fmt.check": "prettier --check .",
     "lint": "eslint \"src/**/*.ts*\"",
+    "lint:css:fix": "npx stylelint \"**/*.css\" --fix",
     "preview": "qwik build preview && vite preview --open",
     "serve": "node server/entry.fastify",
     "start": "vite --open --mode ssr",
@@ -43,6 +44,8 @@
     "undici": "5.22.1",
     "vite": "4.4.7",
     "vite-tsconfig-paths": "4.2.0",
-    "@trivago/prettier-plugin-sort-imports": "^4.2.0"
+    "@trivago/prettier-plugin-sort-imports": "^4.2.0",
+    "stylelint": "^14.5.3",
+    "stylelint-config-rational-order": "^0.1.2"
   }
 }
