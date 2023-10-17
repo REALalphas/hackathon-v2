@@ -1,18 +1,17 @@
 import { component$ } from '@builder.io/qwik'
-import { Link } from '@builder.io/qwik-city'
+import { Link, useLocation } from '@builder.io/qwik-city'
 
 import { SvgGeodata, SvgMap, SvgSpeed } from '~/components/svg'
 
 import s from './Nav.module.css'
 
-interface NavSelectProps {
-	selected?: string;
-}
+export const Nav = component$(() => {
+	const loc = useLocation()
+	const locName = loc.url.pathname.split('/')[1]
 
-export const Nav = component$<NavSelectProps>(({ selected }) => {
 	return (
 		<nav class={s.nav}>
-			<Link href='/speed' class={[s.link, selected == 'speed' && s.active]} data-type='speed'>
+			<Link href='/speed' class={[s.link, locName == 'speed' && s.active]} data-type='speed'>
 				<div class={s.bg}></div>
 				<div class={s.content}>
 					<SvgSpeed />
@@ -20,7 +19,7 @@ export const Nav = component$<NavSelectProps>(({ selected }) => {
 				</div>
 			</Link>
 
-			<Link href='/map' class={[s.link, selected == 'map' && s.active]} data-type='map'>
+			<Link href='/map' class={[s.link, locName == 'map' && s.active]} data-type='map'>
 				<div class={s.bg}></div>
 				<div class={s.content}>
 					<SvgMap />
@@ -28,7 +27,7 @@ export const Nav = component$<NavSelectProps>(({ selected }) => {
 				</div>
 			</Link>
 
-			<Link href='/geodata' class={[s.link, selected == 'geodata' && s.active]} data-type='geodata'>
+			<Link href='/geodata' class={[s.link, locName == 'geodata' && s.active]} data-type='geodata'>
 				<div class={s.bg}></div>
 				<div class={s.content}>
 					<SvgGeodata />
