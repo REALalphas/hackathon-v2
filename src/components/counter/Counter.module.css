@@ -1,5 +1,18 @@
-.header {
-  padding: 17px;
-  background: rgba(34, 34, 34, 0.95);
-  backdrop-filter: blur(6px);
+.counter {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 18px 0;
+}
+
+.column {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #999;
+  background-color: transparent;
+  font-weight: 700;
+}
+
+.column span {
+  color: #FFF;
 }

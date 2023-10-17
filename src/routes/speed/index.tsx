@@ -1,8 +1,8 @@
 import { component$ } from '@builder.io/qwik'
 import type { DocumentHead } from '@builder.io/qwik-city'
 
+import { Counter } from '~/components/counter/Counter'
 import { Header } from '~/components/header/Header'
-import { Nav } from '~/components/nav/Nav'
 import { SvgArrowDown, SvgArrowUp } from '~/components/svg'
 
 import s from './Speed.module.css'
@@ -30,6 +30,9 @@ export default component$(() => {
 						<div class={s.num}>432</div>
 					</div>
 				</div>
+			</div>
+			<div class={s.speed}>
+				<Counter />
 			</div>
 		</>
 	)

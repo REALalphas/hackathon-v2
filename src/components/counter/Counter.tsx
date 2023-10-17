@@ -1,14 +1,20 @@
 import { component$ } from '@builder.io/qwik'
 
+import { SvgBolt, SvgChartBar } from '~/components/svg'
+
 import s from './Counter.module.css'
 
-interface CounterProps {}
-
-export const Counter = component$<CounterProps>(props => {
+export const Counter = component$(() => {
 	return (
-		<div class={s.middle}>
-			<div class={s.column}></div>
-			<div class={s.column}></div>
+		<div class={s.counter}>
+			<div class={s.column}>
+				<SvgChartBar />
+				Мощность <span>-77 Дб</span>
+			</div>
+			<div class={s.column}>
+				<SvgBolt />
+				Задержка <span>~3 ms</span>
+			</div>
 		</div>
 	)
 })

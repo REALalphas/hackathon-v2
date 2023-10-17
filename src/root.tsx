@@ -6,10 +6,10 @@ import {
 } from '@builder.io/qwik-city'
 
 import { RouterHead } from './components/router-head/router-head'
+import { Nav } from '~/components/nav/Nav'
 
 import './global.css'
 import './reset.css'
-import { Nav } from './components/nav/Nav'
 
 export interface QwikCityProps {
 	viewTransition: true
