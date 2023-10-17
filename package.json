@@ -42,6 +42,7 @@
     "typescript": "5.1.6",
     "undici": "5.22.1",
     "vite": "4.4.7",
-    "vite-tsconfig-paths": "4.2.0"
+    "vite-tsconfig-paths": "4.2.0",
+    "@trivago/prettier-plugin-sort-imports": "^4.2.0"
   }
 }
