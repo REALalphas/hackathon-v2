@@ -24,7 +24,9 @@ export default component$(() => {
 				<RouterHead />
 			</head>
 			<body lang='en'>
-				<RouterOutlet />
+				<main>
+					<RouterOutlet />
+				</main>
 				<Nav />
 				<ServiceWorkerRegister />
 			</body>
