@@ -9,7 +9,6 @@ export default component$(() => {
 	return (
 		<>
 			<Header subheading='Карта качества связи' />
-			<Nav />
 		</>
 	)
 })

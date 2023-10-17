@@ -7,7 +7,6 @@ export default component$(() => {
 	return (
 		<>
 			<h1>Geodata</h1>
-			<Nav />
 		</>
 	)
 })

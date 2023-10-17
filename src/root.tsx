@@ -9,6 +9,7 @@ import { RouterHead } from './components/router-head/router-head'
 
 import './global.css'
 import './reset.css'
+import { Nav } from './components/nav/Nav'
 
 export interface QwikCityProps {
 	viewTransition: true
@@ -25,6 +26,7 @@ export default component$(() => {
 			<body lang='en'>
 				<RouterOutlet />
 				<ServiceWorkerRegister />
+				<Nav />
 			</body>
 		</QwikCityProvider>
 	)

@@ -5,10 +5,14 @@ import { SvgGeodata, SvgMap, SvgSpeed } from '~/components/svg'
 
 import s from './Nav.module.css'
 
-export const Nav = component$(() => {
+interface NavSelectProps {
+	selected?: string;
+}
+
+export const Nav = component$<NavSelectProps>(({ selected }) => {
 	return (
 		<nav class={s.nav}>
-			<Link href='/speed' class={[s.link, s.active]} data-type='speed'>
+			<Link href='/speed' class={[s.link, selected == 'speed' && s.active]} data-type='speed'>
 				<div class={s.bg}></div>
 				<div class={s.content}>
 					<SvgSpeed />
@@ -16,7 +20,7 @@ export const Nav = component$(() => {
 				</div>
 			</Link>
 
-			<Link href='/map' class={s.link} data-type='map'>
+			<Link href='/map' class={[s.link, selected == 'map' && s.active]} data-type='map'>
 				<div class={s.bg}></div>
 				<div class={s.content}>
 					<SvgMap />
@@ -24,7 +28,7 @@ export const Nav = component$(() => {
 				</div>
 			</Link>
 
-			<Link href='/geodata' class={s.link} data-type='geodata'>
+			<Link href='/geodata' class={[s.link, selected == 'geodata' && s.active]} data-type='geodata'>
 				<div class={s.bg}></div>
 				<div class={s.content}>
 					<SvgGeodata />
