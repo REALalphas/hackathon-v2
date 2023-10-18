@@ -1,6 +1,6 @@
 import { component$ } from '@builder.io/qwik'
 
-import { SvgArrowsUpDownBlue, SvgBolt, SvgChartBar } from '~/components/svg'
+import { SvgArrowsUpDownBlue, SvgBolt } from '~/components/svg'
 
 import s from './Counter.module.css'
 

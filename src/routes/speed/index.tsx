@@ -35,12 +35,12 @@ export default component$(() => {
 
 	const mainButtonFunc = $(() => {
 		mainButtonName.value = 'Остановить'
-		let speedTest = new SpeedTest()
+		const speedTest = new SpeedTest()
 		setInterval(async () => {
-			let cfJitt = speedTest.results.getUnloadedJitter()
-			let cfPing = speedTest.results.getUnloadedLatency()
-			let cfDn = speedTest.results.getDownloadBandwidth()
-			let cfUp = speedTest.results.getUploadBandwidth()
+			const cfJitt = speedTest.results.getUnloadedJitter()
+			const cfPing = speedTest.results.getUnloadedLatency()
+			const cfDn = speedTest.results.getDownloadBandwidth()
+			const cfUp = speedTest.results.getUploadBandwidth()
 			if (cfPing) {
 				Ping.value = Math.round(cfPing * 10) / 10
 			}
