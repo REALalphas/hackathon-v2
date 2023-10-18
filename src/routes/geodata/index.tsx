@@ -21,20 +21,25 @@ export default component$(() => {
 				<h2 class={s.heading}>
 					GeoData <span>RFC 5870</span>
 				</h2>
-				<a href="geo:54.8143,36.2911?z=14" target="_blank" rel="noopener noreferrer" class={s.coords}>geo:54.8143,36.2911?z=14</a>
+				<a
+					href='geo:54.8143,36.2911?z=14'
+					target='_blank'
+					rel='noopener noreferrer'
+					class={s.coords}
+				>
+					geo:54.8143,36.2911?z=14
+				</a>
 				<div class={s.card_block}>
-					<div class={s.row}>
-						<div class={s.card}>
-							<SvgChartBar />
-							<div class={s.text}>
-								Мощность <span>-77 Дб</span>
-							</div>
+					<div class={s.card}>
+						<SvgChartBar />
+						<div class={s.text}>
+							Мощность <span>-77 Дб</span>
 						</div>
-						<div class={s.card}>
-							<SvgArrowsUpDownOrange />
-							<div class={s.text}>
-								Задержка <span>~3 ms</span>
-							</div>
+					</div>
+					<div class={s.card}>
+						<SvgArrowsUpDownOrange />
+						<div class={s.text}>
+							Задержка <span>~3 ms</span>
 						</div>
 					</div>
 					<div class={s.card}>

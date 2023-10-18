@@ -1,4 +1,11 @@
-import { $, component$, useOnDocument } from '@builder.io/qwik'
+import {
+	$,
+	component$,
+	useOn,
+	useOnDocument,
+	useTask$,
+	useVisibleTask$
+} from '@builder.io/qwik'
 import type { DocumentHead } from '@builder.io/qwik-city'
 import * as maptilersdk from '@maptiler/sdk'
 
@@ -10,20 +17,31 @@ import s from './Map.module.css'
 import '@maptiler/sdk/dist/maptiler-sdk.css'
 
 export default component$(() => {
-	useOnDocument(
-		'load',
-		$(() => {
-			maptilersdk.config.apiKey = 'U5L9BK8UnH7C2pZKrTlG'
-			const map = new maptilersdk.Map({
-				container: 'map',
-				style: 'streets-v2-dark',
-				center: [36.2754, 54.5293],
-				zoom: 10
-			})
+	useVisibleTask$(() => {
+		let userLocation = new maptilersdk.LngLat(36.262724, 54.517791)
+		maptilersdk.config.apiKey = 'U5L9BK8UnH7C2pZKrTlG'
+		const map = new maptilersdk.Map({
+			container: 'map',
+			style: 'streets-v2-dark',
+			center: [36.2754, 54.5293],
+			zoom: 10
 		})
-	)
+
+		// Load user location
+		if ('geolocation' in navigator) {
+			//Try to get location
+			navigator.geolocation.getCurrentPosition(function (position) {
+				userLocation = new maptilersdk.LngLat(
+					position.coords.longitude,
+					position.coords.latitude
+				)
+			})
+		}
+		new maptilersdk.Marker().setLngLat(userLocation).addTo(map)
+	})
 	return (
 		<>
+			<div id='map' class={s.map}></div>
 			<Header subheading='Карта качества связи' />
 			<div class={s.top}>
 				<div class={s.column}>
@@ -43,7 +61,6 @@ export default component$(() => {
 					</div>
 				</div>
 			</div>
-			<div id='map' class={s.map}></div>
 		</>
 	)
 })

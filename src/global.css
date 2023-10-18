@@ -38,3 +38,10 @@ body {
 }
 
 #map { position: absolute; top: 0; bottom: 0; width: 100%; z-index: -1 }
+
+.maplibregl-ctrl-top-right {
+  top: 168px;
+}
+.maplibregl-ctrl-bottom-left {
+  bottom: 66px;
+}

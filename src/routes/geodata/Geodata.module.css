@@ -25,6 +25,10 @@
 }
 
 .card_block {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: var(--base-size);
   padding: 20px 0;
 }
 
