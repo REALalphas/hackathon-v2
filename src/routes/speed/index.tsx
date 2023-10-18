@@ -1,5 +1,6 @@
 import { $, component$, useSignal } from '@builder.io/qwik'
 import type { DocumentHead } from '@builder.io/qwik-city'
+import { useNavigate } from '@builder.io/qwik-city'
 import SpeedTest from '@cloudflare/speedtest'
 
 import { Button } from '~/components/button/Button'
@@ -10,6 +11,7 @@ import { SvgArrowDown, SvgArrowUp } from '~/components/svg'
 import s from './Speed.module.css'
 
 export default component$(() => {
+	const nav = useNavigate()
 	const mainButtonName = useSignal('Начать')
 
 	const downloadSpeed = useSignal(0)
@@ -34,8 +36,9 @@ export default component$(() => {
 	})
 
 	const mainButtonFunc = $(() => {
-		mainButtonName.value = 'Остановить'
 		const speedTest = new SpeedTest()
+		if (mainButtonName.value == 'Остановить') return nav('/speed/reset', true)
+		mainButtonName.value = 'Остановить'
 		setInterval(async () => {
 			const cfJitt = speedTest.results.getUnloadedJitter()
 			const cfPing = speedTest.results.getUnloadedLatency()

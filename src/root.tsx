@@ -21,6 +21,14 @@ export default component$(() => {
 			<head>
 				<meta charSet='utf-8' />
 				<link rel='manifest' href='/manifest.json' />
+				<link
+					href='https://cdn.maptiler.com/maptiler-sdk-js/v1.1.1/maptiler-sdk.css'
+					rel='stylesheet'
+				/>
+				<script src='https://cdn.maptiler.com/maptiler-sdk-js/v1.1.1/maptiler-sdk.umd.min.js'></script>
+				<script defer src={'index.js'}></script>
+				<script src='https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js'></script>
+
 				<RouterHead />
 			</head>
 			<body lang='en'>
