@@ -5,6 +5,12 @@
   background: #292929;
 }
 
+.top {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 20px 0;
+}
+
 .column {
   display: flex;
   gap: 8px;
@@ -28,6 +34,7 @@
 }
 
 .speedometer {
+  margin-top: 35px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -60,9 +67,15 @@
 .num {
   font-size: 26px;
   font-weight: 700;
+  line-height: 60%;
 }
 
 .name {
   color: #999;
   font-weight: 400;
+}
+
+.btn_wrapper{
+  display: flex;
+  justify-content: center;
 }

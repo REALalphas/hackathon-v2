@@ -1,6 +1,7 @@
 import { component$ } from '@builder.io/qwik'
 import type { DocumentHead } from '@builder.io/qwik-city'
 
+import { Button } from '~/components/button/Button'
 import { Counter } from '~/components/counter/Counter'
 import { Header } from '~/components/header/Header'
 import { SvgArrowDown, SvgArrowUp } from '~/components/svg'
@@ -11,7 +12,7 @@ export default component$(() => {
 	return (
 		<>
 			<Header subheading='Измерение скорости' />
-			<div class={s.middle}>
+			<div class={s.top}>
 				<div class={s.column}>
 					<SvgArrowDown />
 					<div class={s.text}>
@@ -41,6 +42,9 @@ export default component$(() => {
 						<div class={s.name}>Отдача</div>
 					</div>
 				</div>
+			</div>
+			<div class={s.btn_wrapper}>
+				<Button color='#545454'>Остановить</Button>
 			</div>
 		</>
 	)
