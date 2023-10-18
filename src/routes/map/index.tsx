@@ -1,16 +1,10 @@
-import {
-	$,
-	component$,
-	useOn,
-	useOnDocument,
-	useTask$,
-	useVisibleTask$
-} from '@builder.io/qwik'
+import { $, component$, useVisibleTask$ } from '@builder.io/qwik'
 import type { DocumentHead } from '@builder.io/qwik-city'
 import * as maptilersdk from '@maptiler/sdk'
 
+import { Button } from '~/components/button/Button'
 import { Header } from '~/components/header/Header'
-import { SvgArrowsUpDownBlue, SvgChartBar } from '~/components/svg'
+import { SvgArrowsUpDownBlue, SvgChartBar, SvgLocation } from '~/components/svg'
 
 import s from './Map.module.css'
 
@@ -39,6 +33,13 @@ export default component$(() => {
 		}
 		new maptilersdk.Marker().setLngLat(userLocation).addTo(map)
 	})
+	const handleButtonClick = $(() => {
+		const geoButton = document.querySelector(
+			'#map > div.maplibregl-control-container > div.maplibregl-ctrl-top-right > div:nth-child(2) > button > span'
+		)
+		const buttonElement: HTMLButtonElement = geoButton as HTMLButtonElement
+		buttonElement.click()
+	})
 	return (
 		<>
 			<div id='map' class={s.map}></div>
@@ -61,6 +62,10 @@ export default component$(() => {
 					</div>
 				</div>
 			</div>
+			<Button onClick={handleButtonClick} isMain color='#279AED'>
+				<SvgLocation />
+				Где я?
+			</Button>
 		</>
 	)
 })

@@ -1,5 +1,6 @@
-import { component$ } from '@builder.io/qwik'
+import { $, component$, useSignal } from '@builder.io/qwik'
 import type { DocumentHead } from '@builder.io/qwik-city'
+import SpeedTest from '@cloudflare/speedtest'
 
 import { Button } from '~/components/button/Button'
 import { Counter } from '~/components/counter/Counter'
@@ -9,6 +10,68 @@ import { SvgArrowDown, SvgArrowUp } from '~/components/svg'
 import s from './Speed.module.css'
 
 export default component$(() => {
+	const mainButtonName = useSignal('Начать')
+
+	const downloadSpeed = useSignal(0)
+	const uploadSpeed = useSignal(0)
+	const downloadSpeedOld = useSignal(0)
+	const uploadSpeedOld = useSignal(0)
+
+	const Ping = useSignal(0)
+	const Jitter = useSignal(0)
+
+	const range = (
+		value: number,
+		low1: number,
+		high1: number,
+		low2: number,
+		high2: number
+	): number => {
+		return low2 + ((high2 - low2) * (value - low1)) / (high1 - low1)
+	}
+	const lerp = $((start: number, end: number, time: number): number => {
+		return start + time * (end - start)
+	})
+
+	const mainButtonFunc = $(() => {
+		mainButtonName.value = 'Остановить'
+		let speedTest = new SpeedTest()
+		setInterval(async () => {
+			let cfJitt = speedTest.results.getUnloadedJitter()
+			let cfPing = speedTest.results.getUnloadedLatency()
+			let cfDn = speedTest.results.getDownloadBandwidth()
+			let cfUp = speedTest.results.getUploadBandwidth()
+			if (cfPing) {
+				Ping.value = Math.round(cfPing * 10) / 10
+			}
+			if (cfJitt) {
+				Jitter.value = Math.round(cfJitt * 10) / 10
+			}
+			if (cfDn) {
+				downloadSpeed.value =
+					Math.round(
+						(await lerp(
+							downloadSpeedOld.value,
+							Math.round(cfDn / 100000) / 10,
+							0.01
+						)) * 100
+					) / 100
+				downloadSpeedOld.value = downloadSpeed.value
+			}
+			if (cfUp) {
+				uploadSpeed.value =
+					Math.round(
+						(await lerp(
+							uploadSpeedOld.value,
+							Math.round(cfUp / 100000) / 10,
+							0.01
+						)) * 100
+					) / 100
+				uploadSpeedOld.value = uploadSpeed.value
+			}
+		}, 22)
+	})
+
 	return (
 		<>
 			<Header subheading='Измерение скорости' />
@@ -19,7 +82,7 @@ export default component$(() => {
 						<h3 class={s.title}>
 							Загрузка <span>Мбит/с</span>
 						</h3>
-						<div class={s.num}>889</div>
+						<div class={s.num}>{downloadSpeed.value}</div>
 					</div>
 				</div>
 				<div class={s.column}>
@@ -28,24 +91,39 @@ export default component$(() => {
 						<h3 class={s.title}>
 							Отдача <span>Мбит/с</span>
 						</h3>
-						<div class={s.num}>432</div>
+						<div class={s.num}>{uploadSpeed.value}</div>
 					</div>
 				</div>
 			</div>
 			<div class={s.speed}>
-				<Counter />
+				<Counter jitter={Jitter.value} ping={Ping.value} />
 			</div>
 			<div class={s.speedometer}>
-				<div class={s.gauge}>
+				<div
+					class={s.gauge}
+					style={`--ang: ${range(
+						(uploadSpeed.value == 0 && downloadSpeed.value) ||
+							uploadSpeed.value,
+						0,
+						100,
+						0,
+						270
+					)}deg;`}
+				>
 					<div class={s.circle}>
-						<div class={s.num}>432</div>
-						<div class={s.name}>Отдача</div>
+						<div class={s.num}>
+							{(uploadSpeed.value == 0 && downloadSpeed.value) ||
+								uploadSpeed.value}
+						</div>
+						<div class={s.name}>
+							{(uploadSpeed.value == 0 && 'Загрузка') || 'Отдача'}
+						</div>
 					</div>
 				</div>
 			</div>
-			<div class={s.btn_wrapper}>
-				<Button color='#545454'>Остановить</Button>
-			</div>
+			<Button isMain color='#545454' onClick={mainButtonFunc}>
+				{mainButtonName}
+			</Button>
 		</>
 	)
 })

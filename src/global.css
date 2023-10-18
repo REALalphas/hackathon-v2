@@ -39,9 +39,13 @@ body {
 
 #map { position: absolute; top: 0; bottom: 0; width: 100%; z-index: -1 }
 
+#map > div.maplibregl-control-container > div.maplibregl-ctrl-top-right > div:nth-child(2) {
+  display: none;
+}
+
 .maplibregl-ctrl-top-right {
-  top: 168px;
+  top: 168px !important;
 }
 .maplibregl-ctrl-bottom-left {
-  bottom: 66px;
+  bottom: 66px !important;
 }
