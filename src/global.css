@@ -49,3 +49,18 @@ body {
 .maplibregl-ctrl-bottom-left {
   bottom: 66px !important;
 }
+
+.logo {
+  width: 229px;
+  height: 286px;
+}
+
+.wrapper {
+  padding-top: 50px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 50px;
+  align-items: center;
+  width: 100%;
+}
