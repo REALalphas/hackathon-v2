@@ -21,7 +21,7 @@ export default component$(() => {
 				<h2 class={s.heading}>
 					GeoData <span>RFC 5870</span>
 				</h2>
-				<div class={s.coords}>geo:54.8143,36.2911?z=14</div>
+				<a href="geo:54.8143,36.2911?z=14" target="_blank" rel="noopener noreferrer" class={s.coords}>geo:54.8143,36.2911?z=14</a>
 				<div class={s.card_block}>
 					<div class={s.row}>
 						<div class={s.card}>
@@ -61,7 +61,7 @@ export default component$(() => {
 					</Button>
 				</div>
 
-				<Button color='#B462F5'>
+				<Button isMain color='#B462F5'>
 					<SvgUpdate />
 					Обновить
 				</Button>

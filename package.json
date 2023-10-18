@@ -31,6 +31,7 @@
     "@builder.io/qwik-city": "^1.2.13",
     "@fastify/compress": "^6.2.1",
     "@fastify/static": "^6.10.1",
+    "@trivago/prettier-plugin-sort-imports": "^4.2.0",
     "@types/eslint": "8.44.1",
     "@types/node": "^20.4.5",
     "@typescript-eslint/eslint-plugin": "6.2.0",
@@ -40,12 +41,11 @@
     "fastify": "^4.17.0",
     "fastify-plugin": "^4.5.0",
     "prettier": "3.0.0",
+    "stylelint": "^14.5.3",
+    "stylelint-config-rational-order": "^0.1.2",
     "typescript": "5.1.6",
     "undici": "5.22.1",
     "vite": "4.4.7",
-    "vite-tsconfig-paths": "4.2.0",
-    "@trivago/prettier-plugin-sort-imports": "^4.2.0",
-    "stylelint": "^14.5.3",
-    "stylelint-config-rational-order": "^0.1.2"
+    "vite-tsconfig-paths": "4.2.0"
   }
 }

@@ -12,7 +12,7 @@ export const Nav = component$(() => {
 
 	return (
 		<nav class={s.nav}>
-			<Link href='/speed' onClick$={(_, el) => el.classList.add(s.active)} class={[s.link, locName == 'speed' && s.active]} data-type='speed'>
+			<Link href='/speed' class={[s.link, locName == 'speed' && s.active]} data-type='speed'>
 				<div class={s.bg}></div>
 				<div class={s.content}>
 					<SvgSpeed />
@@ -20,7 +20,7 @@ export const Nav = component$(() => {
 				</div>
 			</Link>
 
-			<Link href='/map' onClick$={(_, el) => el.classList.add(s.active)} class={[s.link, locName == 'map' && s.active]} data-type='map'>
+			<Link href='/map' class={[s.link, locName == 'map' && s.active]} data-type='map'>
 				<div class={s.bg}></div>
 				<div class={s.content}>
 					<SvgMap />
@@ -28,7 +28,7 @@ export const Nav = component$(() => {
 				</div>
 			</Link>
 
-			<Link href='/geodata' onClick$={(_, el) => el.classList.add(s.active)} class={[s.link, locName == 'geodata' && s.active]} data-type='geodata'>
+			<Link href='/geodata' class={[s.link, locName == 'geodata' && s.active]} data-type='geodata'>
 				<div class={s.bg}></div>
 				<div class={s.content}>
 					<SvgGeodata />

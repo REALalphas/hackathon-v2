@@ -13,8 +13,13 @@
 
 .link {
   position: relative;
-  width: max(20%, 60px);
+  width: max(30%, 60px);
   height: 66px;
+  font-weight: normal;
+}
+
+.link.active {
+  font-weight: bold;
 }
 
 .link[data-type='speed'] {
@@ -58,13 +63,10 @@
   z-index: -1;
 }
 
-.link.active {
-  font-weight: bold;
-}
 
 .link.active .bg {
-  width: calc(var(--base-size) * 6.6);
-  height: calc(var(--base-size) * 6.6);
+  width: calc(var(--base-size) * 7);
+  height: calc(var(--base-size) * 7);
   opacity: 1;
 }
 
