@@ -37,7 +37,8 @@ const requestStations = async () => {
 	}).then(res => {
 		res.data.forEach(el => {
 			geoJSON.features.push({
-				type: 'Feature',
+				type: 'Feature',+
+
 				properties: {
 					name: 'aboba',
 					radio: el.Radio
