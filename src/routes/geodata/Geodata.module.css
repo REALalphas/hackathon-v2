@@ -1,9 +1,9 @@
 .geodata {
-  padding: 40px 20px;
-  justify-content: end;
   display: flex;
-  align-items: center;
   flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+  padding: 40px 20px;
 }
 
 .heading {
@@ -31,7 +31,6 @@
 .row {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   padding-bottom: 12px;
   gap: 32px;
 }
@@ -62,4 +61,28 @@
 .bottom .row {
   padding-top: 12px;
   gap: 24px;
+}
+
+.badge {
+  display: flex;
+  border-radius: 12.857px;
+  border: 1.5px solid #292929;
+  margin-bottom: 16px;
+}
+
+.left, .right {
+  padding: 8px 11px;
+}
+
+.left {
+  background: #292929;
+  color: #999;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.right {
+  font-size: 20px;
+  font-weight: 700;
+  text-decoration-line: underline;
 }

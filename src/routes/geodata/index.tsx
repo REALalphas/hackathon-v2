@@ -48,13 +48,17 @@ export default component$(() => {
 					<h2 class={s.heading}>
 						GeoAtl <span>CC0</span>
 					</h2>
-					<div class={s.row}>
-						<Button color='#786c5a'>
-							<SvgDownload />
-							Скачать архив
-						</Button>
-						Масштаб
+					<div class={s.scale}>
+						<h3>Масштаб</h3>
+						<div class={s.badge}>
+							<span class={s.left}>1:</span>
+							<span class={s.right}>21500</span>
+						</div>
 					</div>
+					<Button color='#786c5a'>
+						<SvgDownload />
+						Скачать архив
+					</Button>
 				</div>
 
 				<Button color='#B462F5'>
